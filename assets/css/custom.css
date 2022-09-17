@@ -1,0 +1,120 @@
+.login-page, .register-page {
+    background: url(../img/bg.jpg);
+    background-size: cover;
+}
+.login-box-body, .register-box-body {
+    background: rgba(255,255,255,0.6);
+    padding: 20px;
+    border-top: 0;
+    color: #333;
+    border: 1px solid #dccdcd;
+}
+.login-logo{
+	padding-top: 100px;
+	font-weight: 600;
+	text-align: center;
+}
+.login-box, .register-box {
+    width: 360px;
+    margin: 5% auto;
+}
+#response img{
+	position: relative;
+	overflow: hidden;
+	display: block;
+}
+#response img{
+	position: absolute;
+	top: 40%;
+	left: 38%;
+	overflow: hidden;
+	display: block;
+}
+table.dataTable td{
+	padding: 0px !important;
+}
+table.dataTable td .btn{
+	padding: 2px 12px;
+}
+#item-list{float:left;list-style:none;margin:0;padding:0;width:190px; position: absolute;
+z-index: 99;}
+#item-list li{padding: 10px; background:#FAFAFA;border-bottom:#F0F0F0 1px solid;}
+#item-list li:hover{background:#F0F0F0;}
+.user-privileges input[type=checkbox]{
+	margin: 10px;
+}
+.skin-green .sidebar-menu > li:hover > a, .skin-green .sidebar-menu > li.active > a {
+    color: #fff;
+    background: red;
+    border-left-color: #00a65a;
+}
+
+/* ================================= TOGGLE SWITCHER ====================================*/
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {display:none;}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+/* =================================/ END TOGGLE SWITCHER ====================================*/
+.privileges .col-sm-1{
+	padding-left: 0px;
+	padding-right: 0px;
+}
+.login-box-msg, .register-box-msg {
+    margin: 0;
+    text-align: center;
+    padding: 0 20px 20px 20px;
+    font-size: 26px;
+}
+.red{color: red !important;}
