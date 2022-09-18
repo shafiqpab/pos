@@ -160,8 +160,8 @@
             <li><a href="<?php echo base_url().'supplier/view';?>"><i class="fa fa-eye"></i> Manage Supplier</a></li>
           </ul>
         </li>
-        <?php } //if( $this->inventory->check_permission('warehouse',$this->session->userdata('id')) ){?>
-        <!-- <li class="treeview <?php echo (@$page == 'warehouse' ? 'active' : '');?>">
+        <?php } if( $this->inventory->check_permission('warehouse',$this->session->userdata('id')) ){?>
+        <li class="treeview <?php echo (@$page == 'warehouse' ? 'active' : '');?>">
           <a href="#">
             <i class="fa fa-user"></i>
             <span>Warehouse</span>
@@ -173,8 +173,8 @@
             <li><a href="<?php echo base_url().'warehouse';?>"><i class="fa fa-plus"></i> Add Warehouse</a></li>
             <li><a href="<?php echo base_url().'warehouse/view';?>"><i class="fa fa-eye"></i> Manage Warehouse</a></li>
           </ul>
-        </li> -->
-        <?php if( $this->inventory->check_permission('stock',$this->session->userdata('id')) ){?>
+        </li>
+        <?php } if( $this->inventory->check_permission('stock',$this->session->userdata('id')) ){?>
         <li class="treeview <?php echo (@$page == 'stock' ? 'active' : '');?>">
           <a href="#">
             <i class="fa fa-gift"></i>
@@ -232,6 +232,20 @@
             <li><a href="<?php echo base_url().'replacement';?>"><i class="fa fa-plus"></i> Receive Item</a></li>
             <li><a href="<?php echo base_url().'replacement/manage_receive';?>"><i class="fa fa-eye"></i> Manage Receive</a></li>
             <li><a href="<?php echo base_url().'replacement/manage_return';?>"><i class="fa fa-eye"></i> Manage Return</a></li>
+          </ul>
+        </li>
+        <?php } if( $this->inventory->check_permission('expense',$this->session->userdata('id')) ){?>
+        <li class="treeview <?php echo (@$page == 'expense' ? 'active' : '');?>">
+          <a href="#">
+            <i class="fa fa-user"></i>
+            <span>Expense</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="<?php echo base_url().'expense';?>"><i class="fa fa-plus"></i> Add Expense</a></li>
+            <li><a href="<?php echo base_url().'expense/view';?>"><i class="fa fa-eye"></i> Manage Expense</a></li>
           </ul>
         </li>
         <?php } if( $this->inventory->check_permission('reports',$this->session->userdata('id')) ){?>

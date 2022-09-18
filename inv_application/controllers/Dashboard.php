@@ -16,8 +16,8 @@ class Dashboard extends CI_Controller
            redirect(base_url().'login', 'refresh');
         }
         // for graph
-        $data['charts'] = $this->pie();
-        $data['balance'] = $this->pie2();
+        // $data['charts'] = $this->pie();
+        // $data['balance'] = $this->pie2();
         $data['bar'] = $this->bar();
 
         // $this->db->group_by('transactionid');
@@ -166,13 +166,12 @@ class Dashboard extends CI_Controller
      * Lets go for a real world example
      */
     function bar()
-    {       
-        
+    {        
         $graph_data = $this->_data();
             
     
         $this->highcharts->set_type('column'); // drauwing type
-        $this->highcharts->set_title('Income VS Expense', 'All over the year'); // set chart title: title, subtitle(optional)
+        $this->highcharts->set_title('Purchase VS Sales', 'All over the year'); // set chart title: title, subtitle(optional)
         $this->highcharts->set_axis_titles('Month', 'Money'); // axis titles: x axis,  y axis
         
         $this->highcharts->set_xAxis($graph_data['axis']); // pushing categories for x axis labels
@@ -195,9 +194,9 @@ class Dashboard extends CI_Controller
     function _data()
     {
         $data['users']['data'] = array(6000, 4500, 7000, 7500, 8000, 9500);
-        $data['users']['name'] = 'Income';
+        $data['users']['name'] = 'Purchase';
         $data['popul']['data'] = array(800, 1300, 1000, 1500, 500, 1800);
-        $data['popul']['name'] = 'Expense';
+        $data['popul']['name'] = 'Sales';
         $data['axis']['categories'] = $this->inventory->get_month_name();
         
         return $data;

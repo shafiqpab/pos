@@ -50,7 +50,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
                 <div class="col-md-4">
                 <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-3 control-label red">Phone</label>
+                  <label for="inputEmail3" class="col-sm-3 control-label red">Mobile No</label>
 
                   <div class="col-sm-9">
                     <input class="form-control" id="inputEmail3"  type="text" name="phone" required="TRUE">

@@ -30,39 +30,49 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <!-- /.box-header -->
             <!-- form start -->
             <?php $row = $query->result();?>
-            <form class="form-horizontal" method="post" action="<?php echo base_url().'transaction/update_expense/'.$row[0]->id;?>">
+            <form class="form-horizontal" method="post" action="<?php echo base_url().'expense/do_update/'.$row[0]->id;?>" id="form_handle">
               <div class="box-body">
+                <div class="row">
               <div class="col-md-4">
                 <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-3 control-label">Account</label>
+                  <label for="inputEmail3" class="col-sm-3 control-label">Expense For</label>
 
                   <div class="col-sm-9">
-                    <select name="account_id" class="form-control" required="TRUE">
-                      <option value="">Select account</option>
-                      <?php $this->inventory->get_accounts( $row[0]->account_id );?>
-                    </select>
+                    <input type="text" name="expense_for" id="expense_for" class="form-control" value="<?php echo $row[0]->expense_for;?>">
                   </div>
                 </div>
                 </div>
                 <div class="col-md-4">
                 <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-3 control-label">Mode</label>
+                  <label for="inputEmail3" class="col-sm-3 control-label">Payment Mode</label>
 
                   <div class="col-sm-9">
                     <select name="mode" class="form-control">
-                      <option <?php echo ($row[0]->mode == "Cash" ? "selected" : ""); ?> value="Cash">Cash</option>
-                      <option <?php echo ($row[0]->mode == "Cheque" ? "selected" : ""); ?> value="Cheque">Cheque</option>
-                      <option <?php echo ($row[0]->mode == "Others" ? "selected" : ""); ?> value="Others">Others</option>
+                      <option <?php echo ($row[0]->pay_mood == "Cash" ? "selected" : ""); ?> value="Cash">Cash</option>
+                      <option <?php echo ($row[0]->pay_mood == "Cheque" ? "selected" : ""); ?> value="Cheque">Cheque</option>
+                      <option <?php echo ($row[0]->pay_mood == "Others" ? "selected" : ""); ?> value="Others">Others</option>
                     </select>
                   </div>
                 </div>
                 </div>
+
+                <div class="col-md-4">
+                <div class="form-group">
+                  <label for="inputEmail3" class="col-sm-3 control-label">Reference No</label>
+
+                  <div class="col-sm-9">
+                    <input class="form-control" type="text" name="reference">
+                  </div>
+                </div>
+                </div>
+              </div>
+              <div class="row">
                 <div class="col-md-4">
                 <div class="form-group">
                   <label for="inputEmail3" class="col-sm-3 control-label">Amount</label>
 
                   <div class="col-sm-9">
-                    <input class="form-control" type="number" name="amount" required="TRUE" value="<?php echo $row[0]->payment;?>">
+                    <input class="form-control" type="number" name="amount" required="TRUE" value="<?php echo $row[0]->amount;?>">
                   </div>
                 </div>
                 </div>
@@ -77,7 +87,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <div class="input-group-addon">
                           <i class="fa fa-calendar"></i>
                         </div>
-                       <input class="form-control form_datetime" name="date" type="text" required="TRUE" value="<?php echo $row[0]->date;?>">
+                       <input class="form-control form_datetime" name="date" type="text" required="TRUE" value="<?php echo $row[0]->expense_date;?>">
                     </div>
                   </div>
                 </div>
@@ -85,14 +95,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                 <div class="col-md-4">
                 <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-3 control-label">Description</label>
+                  <label for="inputEmail3" class="col-sm-3 control-label">Remarks</label>
 
                   <div class="col-sm-9">
-                    <input class="form-control"  type="text" name="note" required="TRUE" value="<?php echo $row[0]->note;?>">
+                    <input class="form-control"  type="text" name="remarks" required="TRUE" value="<?php echo $row[0]->remarks;?>">
                   </div>
                 </div>
                 </div>
-
+              </div>
               </div>
               <!-- /.box-body -->
               <div class="box-footer">

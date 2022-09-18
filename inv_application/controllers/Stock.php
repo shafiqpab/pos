@@ -43,6 +43,7 @@ class Stock extends CI_Controller
 			$this->form_validation->set_rules('current_stock', 'Current Stokc', 'required');
 			$this->form_validation->set_rules('sell_price', 'Selling Price', 'required');
 			$this->form_validation->set_rules('supplier_id', 'Supplier', 'required');
+			$this->form_validation->set_rules('warehouse_id', 'Warehouse', 'required');
 			if($this->form_validation->run() == FALSE){
 				echo '<div class="alert alert-danger"><i class="icon fa fa-ban"></i> '.validation_errors().'</div>';
 			}else{
@@ -59,6 +60,8 @@ class Stock extends CI_Controller
 					'category'=>$this->input->post('cat_id'),
 					'model_no'=>$this->input->post('model_no'),
 					'made_by'=>$this->input->post('made_by'),
+					'warehouse'=>$this->input->post('warehouse_id'),
+					'source'=>$this->input->post('source'),
 					'date'=>date('Y-m-d H:i:s'),
 					'note'=>$this->input->post('note'),
 					'uom'=>$this->input->post('uom'),
@@ -104,6 +107,8 @@ class Stock extends CI_Controller
 					'category'=>$this->input->post('cat_id'),
 					'model_no'=>$this->input->post('model_no'),
 					'made_by'=>$this->input->post('made_by'),
+					'warehouse'=>$this->input->post('warehouse_id'),
+					'source'=>$this->input->post('source'),
 					'date'=>date('Y-m-d H:i:s'),
 					'note'=>$this->input->post('note'),
 					'uom'=>$this->input->post('uom'),

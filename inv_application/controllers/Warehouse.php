@@ -33,6 +33,9 @@ class Warehouse extends CI_Controller
 			}else{
 				$data=array(
 					'warehouse'=>$this->input->post('warehouse'),
+					'phone_no'=>$this->input->post('phone_no'),
+					'address'=>$this->input->post('address'),
+					'is_active'=>$this->input->post('status'),
 					'insert_by'=>$this->session->userdata('id')
 					);
 				$this->db->insert('tbl_warehouse',$data);
@@ -57,7 +60,7 @@ class Warehouse extends CI_Controller
 		if (!$this->session->userdata('is_admin_login')) {
            redirect(base_url().'login', 'refresh');
         }
-        $data['page'] = "stock";
+        $data['page'] = "warehouse";
         $id = $this->uri->segment(3);
         $data['query'] = $this->db->get_where('tbl_warehouse',array('id'=>$id));
         $this->load->view('edit_warehouse',$data);
@@ -69,6 +72,9 @@ class Warehouse extends CI_Controller
         $id = $this->uri->segment(3);
         $data=array(
 			'warehouse'=>$this->input->post('warehouse'),
+			'phone_no'=>$this->input->post('phone_no'),
+			'address'=>$this->input->post('address'),
+			'is_active'=>$this->input->post('status'),
 			'update_by' 	=> $this->session->userdata('id'),
 			'update_date' 	=> date('Y-m-d H:i:s')
 			);

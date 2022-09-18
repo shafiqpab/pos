@@ -173,6 +173,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
                 </div>
               </div>
+                
+                <div class="row">                
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-4 control-label red">Warehouse</label>
+  
+                    <div class="col-sm-8">
+                      <select name="warehouse_id" class="form-control" required="TRUE">
+                        <option>Select Warehouse</option>
+                       <?php $this->inventory->get_warehouse();?>
+                      </select>
+                    </div>
+                  </div>
+                  </div>
+                </div>
               </div>
               <!-- /.box-body -->
               <div class="box-footer">

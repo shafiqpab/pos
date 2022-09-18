@@ -29,35 +29,44 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form class="form-horizontal" method="post" action="<?php echo base_url().'transaction/add_expense'?>">
+            <form class="form-horizontal" method="post" action="<?php echo base_url().'expense/do_add'?>" id="form_handle">
               <div class="box-body">
-              <div class="col-md-4">
-                <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-3 control-label">Account</label>
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="inputEmail3" class="col-sm-3 control-label">Expense For</label>
 
-                  <div class="col-sm-9">
-                    <select name="account_id" class="form-control" required="TRUE">
-                      <option value="">Select account</option>
-                      <?php $this->inventory->get_accounts();?>
-                    </select>
-                  </div>
-                </div>
-                </div>
-                <div class="col-md-4">
-                <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-3 control-label">Mode</label>
+                      <div class="col-sm-9">
+                        <input type="text" name="expense_for" id="expense_for" class="form-control">
+                      </div>
+                    </div>
+                    </div>
+                    <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="inputEmail3" class="col-sm-3 control-label">Payment Mode</label>
 
-                  <div class="col-sm-9">
-                    <select name="mode" class="form-control" required="TRUE">
-                      <option value="">Select payment mode</option>
-                      <option value="Cash">Cash</option>
-                      <option value="Cheque">Cheque</option>
-                      <option value="Othres">Othres</option>
-                    </select>
+                      <div class="col-sm-9">
+                        <select name="mode" class="form-control" required="TRUE">
+                          <option value="">Select payment mode</option>
+                          <option value="Cash">Cash</option>
+                          <option value="Cheque">Cheque</option>
+                          <option value="Othres">Othres</option>
+                        </select>
+                      </div>
+                    </div>
+                    </div>
+                    <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="inputEmail3" class="col-sm-3 control-label">Reference No</label>
+
+                      <div class="col-sm-9">
+                        <input class="form-control" type="text" name="reference" required="TRUE">
+                      </div>
+                    </div>
+                    </div>
                   </div>
-                </div>
-                </div>
-                <div class="col-md-4">
+                <div class="row">
+                 <div class="col-md-4">
                 <div class="form-group">
                   <label for="inputEmail3" class="col-sm-3 control-label">Amount</label>
 
@@ -66,7 +75,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   </div>
                 </div>
                 </div>
-                
+
                 <div class="col-md-4">
                 <div class="form-group">
                   <label for="inputEmail3" class="col-sm-3 control-label">Date</label>
@@ -84,13 +93,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 
                 <div class="col-md-4">
                 <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-3 control-label">Description</label>
+                  <label for="inputEmail3" class="col-sm-3 control-label">Remarks</label>
 
                   <div class="col-sm-9">
-                    <input class="form-control"  type="text" name="note" required="TRUE">
+                    <input class="form-control"  type="text" name="remarks" required="TRUE">
                   </div>
                 </div>
                 </div>
+              </div>
              
               </div>
               <!-- /.box-body -->
@@ -103,54 +113,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div id="response"></div>
           </div>
           <!-- /.info-box -->
-
-          <!-- ================================== DATA TABLE SHOW ==============================================-->
-          <div class="box box-info">
-            <div class="box-header">
-              <h3 class="box-title">Expense List</h3>
-            </div>
-            <!-- /.box-header -->
-            <div class="box-body">
-              <table id="example1" class="table table-bordered table-striped">
-                <thead>
-                <tr>
-                  <th>SI</th>
-                  <th>Description</th>
-                  <th>Amount</th>
-                  <th>Date</th>
-                  <th>Action</th>
-                </tr>
-                </thead>
-                <tbody>
-                <?php $num=1; foreach($query->result() as $row){ ?>
-                <tr>
-                
-                  <td><?php echo $num;?></td>
-                  <td><?php echo $row->note;?></td>
-                  <td><?php echo $row->payment;?></td>
-                  <td><?php echo $row->date; ?></td>
-                  
-                  <td width="100"><div class="btn-group">
-                  <button type="button" class="btn btn-danger">Action</button>
-                  <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    <span class="caret"></span>
-                    <span class="sr-only">Toggle Dropdown</span>
-                  </button>
-                  <ul class="dropdown-menu" role="menu">
-                    <li><a href="<?php echo base_url().'transaction/expense_edit/'.$row->id;;?>"><i class="fa fa-edit"></i> Edit</a></li>
-                    <li><a class="deletebtn" href="<?php echo base_url().'transaction/delete/'.$row->id;?>"><i class="fa fa-trash"></i> Delete</a></li>
-                  </ul>
-                </div></td>
-                </tr>
-                <?php $num++; } ?>
-                </tfoot>
-              </table>
-            </div>
-            <!-- /.box-body -->
-          </div>
-          <!-- /.info-box -->
-
-        </div>
         <!-- /.col -->
       </div>
       <!-- /.row -->

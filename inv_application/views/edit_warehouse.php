@@ -32,20 +32,58 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <form class="form-horizontal" method="post" action="<?php echo base_url().'warehouse/do_update/'.$row[0]->id;?>" id="form_handle">
               <div class="box-body">
               
-              <div class="col-md-4">
-                <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-3 control-label">Warehouse Name</label>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="inputEmail3" class="col-sm-3 control-label">Warehouse Name</label>
 
-                  <div class="col-sm-9">
-                    <input class="form-control" id="inputEmail3" type="text" name="warehouse" required="TRUE" value="<?php echo $row[0]->warehouse;?>">
+                      <div class="col-sm-9">
+                        <input class="form-control" id="inputEmail3" type="text" name="warehouse" required="TRUE" value="<?php echo $row[0]->warehouse;?>">
+                      </div>
+                    </div>
+                    </div>
+
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-3 control-label">Mobile No</label>
+
+                        <div class="col-sm-9">
+                          <input class="form-control" id="inputEmail3" type="text" name="phone_no" required="TRUE" value="<?php echo $row[0]->phone_no;?>">
+                        </div>
+                      </div>
+                      </div>
                   </div>
-                </div>
+
+
+                <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-3 control-label">Address</label>
+
+                    <div class="col-sm-9">
+                     <input class="form-control" id="inputEmail3" type="text" name="address" required="TRUE" value="<?php echo $row[0]->address;?>">
+                    </div>
+                  </div>
+                  </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-3 control-label">Status</label>
+
+                    <div class="col-sm-9">
+                    <select name="status" class="form-control">
+                      <option value="0">Select</option>
+                      <option <?php echo ($row[0]->is_active==1) ? "selected" : "";?> value="1">Active</option>
+                      <option <?php echo ($row[0]->is_active==2) ? "selected" : "";?> value="2">Inactive</option>
+                    </select>
+                    </div>
+                  </div>
+                  </div>
                 </div>
               </div>
               <!-- /.box-body -->
               <div class="box-footer">
-                <button type="reset" class="btn btn-danger">Cancel</button>
-                <button type="submit" class="btn btn-info pull-right"><i class="fa fa-user"></i> Add Now</button>
+                <button type="reset" class="btn btn-danger pull-right">Cancel</button>
+                <button type="submit" class="btn btn-info pull-right"><i class="fa fa-save"></i> Update Now</button>&nbsp;&nbsp;
               </div>
               <!-- /.box-footer -->
             </form>

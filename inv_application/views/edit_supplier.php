@@ -53,7 +53,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
                 <div class="col-md-4">
                 <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-3 control-label">Phone</label>
+                  <label for="inputEmail3" class="col-sm-3 control-label">Mobile No</label>
 
                   <div class="col-sm-9">
                     <input class="form-control" id="inputEmail3"  type="text" name="phone" value="<?php echo $row[0]->phone;?>">

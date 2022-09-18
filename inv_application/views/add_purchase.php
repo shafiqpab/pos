@@ -83,37 +83,39 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               <hr> <!-- ======================== PURCHASE SBMIT FORM =================================== -->
               <form class="form-horizontal" method="post" id="purchase_item_form" action="<?php echo base_url().'purchase/save_purchase';?>">
               <div class="box-body">
-              <div class="col-md-4">
-                <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-4 control-label red">Supplier</label>
-
-                  <div class="col-sm-8">
-                    <select name="supplier_id" class="form-control" required="TRUE" id="supplier">
-                      <option>Select Supplier</option>
-                     <?php $this->inventory->get_supplier();?>
-                    </select>
-                  </div>
-                </div>
-                </div>
+                <div class="row">
                 <div class="col-md-4">
-                <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-4 control-label">Mobile </label>
+                  <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-4 control-label red">Supplier</label>
 
-                  <div class="col-sm-8">
-                    <input class="form-control"  type="text" name="contact" id="scontact">
+                    <div class="col-sm-8">
+                      <select name="supplier_id" class="form-control" required="TRUE" id="supplier">
+                        <option>Select Supplier</option>
+                      <?php $this->inventory->get_supplier();?>
+                      </select>
+                    </div>
                   </div>
-                </div>
-                </div>
-                <div class="col-md-4">
-                <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-4 control-label">Address</label>
+                  </div>
+                  <div class="col-md-4">
+                  <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-4 control-label">Mobile </label>
 
-                  <div class="col-sm-8">
-                    <input class="form-control" type="text" name="address" id="saddress">
+                    <div class="col-sm-8">
+                      <input class="form-control"  type="text" name="contact" id="scontact">
+                    </div>
                   </div>
-                </div>
-                </div>
-             
+                  </div>
+                  <div class="col-md-4">
+                  <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-4 control-label">Address</label>
+
+                    <div class="col-sm-8">
+                      <input class="form-control" type="text" name="address" id="saddress">
+                    </div>
+                  </div>
+                  </div>
+              </div>
+              <div class="row">
               <div class="col-md-4">
                 <div class="form-group">
                   <label for="inputEmail3" class="col-sm-4 control-label">Grand Total</label>
@@ -142,6 +144,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   </div>
                 </div>
                 </div>
+              </div>
+              <div class="row">
                 <div class="col-md-4">
                 <div class="form-group">
                   <label for="inputEmail3" class="col-sm-4 control-label red">Receiving Mode</label>
@@ -177,6 +181,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   </div>
                 </div>
                 </div>
+              </div>
+              <div class="row">                
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label for="inputEmail3" class="col-sm-4 control-label red">Warehouse</label>
+
+                  <div class="col-sm-8">
+                    <select name="warehouse_id" class="form-control" required="TRUE">
+                      <option>Select Warehouse</option>
+                     <?php $this->inventory->get_warehouse();?>
+                    </select>
+                  </div>
+                </div>
+                </div>
+              </div>
               
               </div>
               <!-- /.box-body -->

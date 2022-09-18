@@ -13,7 +13,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">View Warehouse</li>
+        <li class="active">View Expense</li>
       </ol>
     </section>
 
@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="col-md-12 col-sm-12 col-xs-12">
           <div class="box box-info">
             <div class="box-header">
-              <h3 class="box-title">Warehouse List</h3>
+              <h3 class="box-title">Expense List</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -32,10 +32,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <thead>
                 <tr>
                   <th width="5%">SI</th>
-                  <th width="20%">Warehouse Name</th>
-                  <th width="20%">Phone No</th>
-                  <th width="30%">Address</th>
-                  <th width="10%">Status</th>
+                  <th width="20%">Expense For</th>
+                  <th width="20%">Amount</th>
+                  <th width="30%">Data</th>
+                  <th width="10%">Pay Mode</th>
                   <th width="10%">Action</th>
                 </tr>
                 </thead>
@@ -43,10 +43,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <?php $num=1; foreach($query->result() as $row){ ?>
                 <tr>
                   <td><?php echo $num;?></td>
-                  <td><?php echo $row->warehouse;?></td>
-                  <td><?php echo $row->phone_no;?></td>
-                  <td><?php echo $row->address;?></td>
-                  <td><?php echo ($row->is_active==1) ? "Active" : "Inactive";?></td>
+                  <td><?php echo $row->expense_for;?></td>
+                  <td><?php echo $row->amount;?></td>
+                  <td><?php echo $row->expense_date;?></td>
+                  <td><?php echo $row->pay_mood;?></td>
                   <td><div class="btn-group">
                   <button type="button" class="btn btn-danger">Action</button>
                   <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
@@ -54,8 +54,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <span class="sr-only">Toggle Dropdown</span>
                   </button>
                   <ul class="dropdown-menu" role="menu">
-                    <li><a href="<?php echo base_url().'warehouse/edit/'.$row->id;;?>"><i class="fa fa-edit"></i> Edit</a></li>
-                    <li><a class="deletebtn" href="<?php echo base_url().'warehouse/delete/'.$row->id;?>"><i class="fa fa-trash"></i> Delete</a></li>
+                    <li><a href="<?php echo base_url().'expense/edit/'.$row->id;;?>"><i class="fa fa-edit"></i> Edit</a></li>
+                    <li><a class="deletebtn" href="<?php echo base_url().'expense/delete/'.$row->id;?>"><i class="fa fa-trash"></i> Delete</a></li>
                   </ul>
                 </div></td>
                 </tr>

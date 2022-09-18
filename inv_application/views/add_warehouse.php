@@ -30,21 +30,57 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <!-- form start -->
             <form class="form-horizontal" method="post" action="<?php echo base_url().'warehouse/do_add'?>" id="form_handle">
               <div class="box-body">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-3 control-label">Warehouse Name</label>
+                <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-3 control-label">Name</label>
 
-                  <div class="col-sm-9">
-                    <input class="form-control" id="inputEmail3" type="text" name="warehouse" required="TRUE">
+                    <div class="col-sm-9">
+                      <input class="form-control" id="inputEmail3" type="text" name="warehouse" required="TRUE">
+                    </div>
+                  </div>
+                  </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-3 control-label">Mobile No</label>
+
+                    <div class="col-sm-9">
+                      <input class="form-control" id="inputEmail3" type="text" name="phone_no" required="TRUE">
+                    </div>
+                  </div>
                   </div>
                 </div>
+
+                <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-3 control-label">Address</label>
+
+                    <div class="col-sm-9">
+                     <input class="form-control" id="inputEmail3" type="text" name="address" required="TRUE">
+                    </div>
+                  </div>
+                  </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-3 control-label">Status</label>
+
+                    <div class="col-sm-9">
+                    <select name="status" class="form-control">
+                      <option value="0">Select</option>
+                      <option value="1">Active</option>
+                      <option value="2">Inactive</option>
+                    </select>
+                    </div>
+                  </div>
+                  </div>
                 </div>
 
               </div>
               <!-- /.box-body -->
               <div class="box-footer">
-                <button type="reset" class="btn btn-danger">Cancel</button>
-                <button type="submit" class="btn btn-info pull-right"><i class="fa fa-user"></i> Add Now</button>
+                <button type="reset" class="btn btn-danger">Reset</button>
+                <button type="submit" class="btn btn-info pull-right"><i class="fa fa-save"></i> Save</button>
               </div>
               <!-- /.box-footer -->
             </form>
