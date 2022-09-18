@@ -186,7 +186,7 @@ class Sales extends CI_Controller
             $discount = $this->input->post('discount');
             $payment = $this->input->post('payment');
             $exchange = $this->input->post('exchange');
-            $account_id = $this->input->post('account_id');
+            $account_id = 0;//$this->input->post('account_id');
             $mood = $this->input->post('payment-mood');
             $note = $this->input->post('note');
             $sales_id = uniqid();
