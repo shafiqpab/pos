@@ -103,6 +103,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                       <option value="kg">kg</option>
                       <option value="gm">gm</option>
                       <option value="dzn">Dzn</option>
+                      <option value="pair">Pair</option>
+
                     </select>
                   </div>
                 </div>
