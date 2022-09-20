@@ -506,7 +506,7 @@ class Sales extends CI_Controller
 
             $tid = $this->input->post('tid');
             $data=array(
-                'account_id'=>0;//$this->input->post('account_id'),
+                'account_id'=>0,//$this->input->post('account_id'),
                 'transaction_id'=>$this->input->post('tid'),
                 'payment'=>$this->input->post('amount'),
                 'transaction_type'=>'sales',
