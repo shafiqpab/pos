@@ -194,7 +194,7 @@ class Purchase extends CI_Controller
 			$supplier_id = $this->input->post('supplier_id');
 			$payment = $this->input->post('payment');
 			$exchange = $this->input->post('exchange');
-			$account_id = $this->input->post('account_id');
+			$account_id = 0;//$this->input->post('account_id');
 			$mood = $this->input->post('payment-mood');
             $note = $this->input->post('note');
 			$type = $this->input->post('transaction_type');
@@ -371,7 +371,7 @@ class Purchase extends CI_Controller
 
             $tid = $this->input->post('tid');
             $data=array(
-                'account_id'=>$this->input->post('account_id'),
+                'account_id'=>0;//$this->input->post('account_id'),
                 'transaction_id'=>$this->input->post('tid'),
                 'payment'=>$this->input->post('amount'),
                 'transaction_type'=>'purchase',
@@ -471,7 +471,7 @@ class Purchase extends CI_Controller
             $supplier_id = $this->input->post('supplier_id');
             $payment = $this->input->post('payment');
             $exchange = $this->input->post('exchange');
-            $account_id = $this->input->post('account_id');
+            $account_id = 0;//$this->input->post('account_id');
             $mood = $this->input->post('payment-mood');
             $note = $this->input->post('note');
             $sales_id = $this->uri->segment(3);
