@@ -12,7 +12,7 @@
       </div>
 	   <form role="form" class="form-horizontal" id="payment_form" method="post" action="<?php echo base_url().'sales/add_payment'?>">
 	    <div class="modal-body">
-      <div class="form-group">
+      <!-- <div class="form-group">
           <label  class="col-sm-3 control-label">Account</label>
 
           <div class="col-sm-9">
@@ -21,9 +21,9 @@
               <?php $this->inventory->get_accounts();?>
             </select>
           </div>
-        </div>
+        </div> -->
          <div class="form-group">
-              <label for="inputEmail3" class="col-sm-3 control-label">Mode</label>
+              <label for="inputEmail3" class="col-sm-3 control-label">Pay Mode</label>
 
               <div class="col-sm-9">
                 <select name="mode" class="form-control" required="TRUE">
@@ -53,7 +53,7 @@
                     </div>
                     </div>
             <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-3 control-label">Description</label>
+                  <label for="inputEmail3" class="col-sm-3 control-label">Remarks</label>
 
                   <div class="col-sm-9">
                     <input class="form-control"  type="text" name="note" required="TRUE">

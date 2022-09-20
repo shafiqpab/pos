@@ -41,7 +41,7 @@
           <h4>Invoice To,</h4>
           <address>
           <?php $sinfo = $this->inventory->get_customer_info($this->uri->segment(3));?>
-            <strong><?php echo $sinfo[0]->name;?></strong><br>
+            <strong><?php echo @$sinfo[0]->name;?></strong><br>
             <?php echo $sinfo[0]->address;?><br>
             Phone: <?php echo $sinfo[0]->phone;?><br>
             Email: <?php echo $sinfo[0]->email;?>
